@@ -11,15 +11,22 @@ package cse360assign2;
 
 public class Calculator {
 	
-/**
- * Initializes the int value total
- */
-	private int total;
+	/**
+	 * Initializes the int value total
+	 */
+	 private int total;
+	
+	/**
+	 * Initializes the String value entered
+	 * 
+	 */
+	private String entered = "0"; 
 	
 	/**
 	 * Initializes the Calculator method
 	 */
 	public Calculator () {
+		
 		total = 0;  // not needed - included for clarity
 	}
 	
@@ -30,6 +37,7 @@ public class Calculator {
 	public int getTotal () {
 		
 		return total;
+		
 	}
 	
 	/**
@@ -39,6 +47,7 @@ public class Calculator {
 	public void add (int value) {
 		
 		total += value;
+		entered = entered + " + " + value;
 	}
 	
 	/**
@@ -48,6 +57,7 @@ public class Calculator {
 	public void subtract (int value) {
 		
 		total -= value;
+		entered = entered + " - " + value;
 	}
 	
 	/**
@@ -57,7 +67,7 @@ public class Calculator {
 	public void multiply (int value) {
 		
 		total = total*value;
-		
+		entered = entered + " * " + value;
 	}
 	
 	/**
@@ -66,7 +76,7 @@ public class Calculator {
 	 */
 	public void divide (int value) {
 		
-		total = total/value;
+
 		if(value == 0) {
 			
 			total = 0;
@@ -75,18 +85,25 @@ public class Calculator {
 			
 			total = total/value;
 		}
-		
+		entered = entered + " / " + value;
 	}
 	
 	/**
 	 * This method returns the history of what was calculated in the method
 	 * @return The string of values used 
 	 */
-	public String getHistory () {
-		return "";
+	public String getHistory() {
+		
+		return entered;
 	}
+	
 }
 
 /**
- * No Edits made except the javadoc comments currently
+ * *******EDITS*******
+ * Added code to add, subtract, divide, and multiply methods
+ * Added the entered string method
+ * Added the entered string to the methods
+ * Added code to String getHistory() to return code
+ * 
  */
